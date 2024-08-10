@@ -11,6 +11,10 @@ body {
     align-items: center;
 }
 
+h1 {
+    color: white;
+}
+
 .calculator-content {
     width: 37.5em;
     height:37.5em ;
@@ -29,5 +33,34 @@ body {
 
 .calculator-buttons {
     display: grid;
-    
+    grid-template-columns: 5em 5em 5em 5em 5em;
+    grid-template-rows: 5em 5em 5em 5em;
+    gap: 1.563em;
+    margin-top: 1.688em ;
+    margin-right: 3.125em;
+    margin-left: 3.125em;
+}
+
+.calculator-buttons > * {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+p, i {
+    color: #FFFFFF;
+    font-size: 23px;
+    font-weight: 400;
+}
+.red {
+    background-color: #FF0000;
+}
+
+.blue {
+    background-color: #1800F3;
+}
+.last {
+    grid-column: -4/-1;
+    border-radius: 1.25em;
 }
