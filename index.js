@@ -11,7 +11,7 @@
 //     })
 // }
 let showNumber = document.querySelector('.show');
-Number(showNumber);
+// numbers portion
 document.querySelector('.seven').addEventListener("click", function(){
     showNumber.innerHTML = showNumber.innerHTML + 7;
 })
@@ -40,4 +40,14 @@ document.querySelector('.two').addEventListener("click", function(){
 })
 document.querySelector('.one').addEventListener("click", function(){
     showNumber.innerHTML = showNumber.innerHTML + 1;
+})
+
+// symbols
+document.querySelector('.clear').addEventListener("click", function () {
+    showNumber.innerHTML = '';
+})
+
+document.querySelector('.delete').addEventListener("click", function(){
+    var newNumber = showNumber.innerHTML.slice(0, -1);
+    showNumber.innerHTML = newNumber;
 })
