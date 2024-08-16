@@ -1,17 +1,8 @@
-// let showNumber = document.querySelector('.show');
-
-
-// for(let i = 0; i < document.querySelectorAll('.blue').length; i++ ) {
-
-//     document.querySelectorAll('.blue')[i].addEventListener("click", function() {
-    
-      
-      
-    
-//     })
-// }
 let showNumber = document.querySelector('.show');
-// numbers portion
+let showNumber2 = document.querySelector('.showSecond');
+let operationShown = document.querySelector('.operation');
+let firstNum;
+let secondNum;
 document.querySelector('.seven').addEventListener("click", function(){
     showNumber.innerHTML = showNumber.innerHTML + 7;
 })
@@ -41,13 +32,73 @@ document.querySelector('.two').addEventListener("click", function(){
 document.querySelector('.one').addEventListener("click", function(){
     showNumber.innerHTML = showNumber.innerHTML + 1;
 })
+document.querySelector('.zero').addEventListener("click", function(){
+    showNumber.innerHTML = showNumber.innerHTML + 0;
+})
 
 // symbols
 document.querySelector('.clear').addEventListener("click", function () {
     showNumber.innerHTML = '';
+    showNumber2.innerHTML = '';
+    document.querySelector('.operation').innerHTML = '';
 })
 
 document.querySelector('.delete').addEventListener("click", function(){
     var newNumber = showNumber.innerHTML.slice(0, -1);
     showNumber.innerHTML = newNumber;
+    console.log(newNumber);
+});
+document.querySelector('.multiply').addEventListener("click", function(){
+    operationShown.innerHTML = 'X';
+    firstNum = showNumber.innerHTML;
+    showNumber.innerHTML = '';
+    
+
+});
+document.querySelector('.add').addEventListener("click", function(){
+    operationShown.innerHTML = '+';
+    firstNum = showNumber.innerHTML;
+    firstNum = Number(firstNum);
+    showNumber.innerHTML = '';
 })
+
+document.querySelector('.subtract').addEventListener("click", function(){
+    operationShown.innerHTML = '-';
+    firstNum = showNumber.innerHTML;
+    firstNum = Number(firstNum);
+    showNumber.innerHTML = '';
+})
+
+document.querySelector('.divide').addEventListener("click", function(){
+    operationShown.innerHTML = '/';
+    firstNum = showNumber.innerHTML;
+    firstNum = Number(firstNum);
+    showNumber.innerHTML = '';
+})
+
+document.querySelector('.last').addEventListener("click", function(){
+    secondNum = showNumber.innerHTML;
+    secondNum = Number(secondNum);
+    showNumber.innerHTML = Number(showNumber.innerHTML);
+    if(operationShown.innerHTML == 'X') {
+        showNumber.innerHTML = firstNum * secondNum;
+    }
+    else if(operationShown.innerHTML == '+'){
+        showNumber.innerHTML = firstNum + secondNum;
+    }
+    else if(operationShown.innerHTML == '-'){
+        showNumber.innerHTML = firstNum - secondNum;
+    }
+    else {
+        showNumber.innerHTML = firstNum / secondNum;
+    }
+
+    
+})
+
+
+
+
+
+
+
