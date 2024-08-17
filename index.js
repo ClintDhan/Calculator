@@ -89,8 +89,11 @@ document.querySelector('.last').addEventListener("click", function () {
     else if (operationShown.innerHTML == '-') {
         showNumber.innerHTML = firstNum - secondNum;
     }
-    else {
+    else if (operationShown.innerHTML == '/') {
         showNumber.innerHTML = firstNum / secondNum;
+    }
+    else{
+        showNumber.innerHTML = 'Insufficient input';
     }
 
 
