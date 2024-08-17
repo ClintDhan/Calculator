@@ -37,6 +37,14 @@ document.querySelector('.zero').addEventListener("click", function () {
 })
 
 // symbolsokayy
+
+document.querySelector('.dot').addEventListener("click", function(){
+    if(showNumber.innerHTML.includes('.') == false){
+        showNumber.innerHTML = showNumber.innerHTML + '.'
+    } else {
+        showNumber.innerHTML = showNumber.innerHTML;
+    }
+})
 document.querySelector('.clear').addEventListener("click", function () {
     showNumber.innerHTML = '';
     showNumber2.innerHTML = '';
