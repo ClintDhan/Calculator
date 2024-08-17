@@ -59,6 +59,7 @@ document.querySelector('.delete').addEventListener("click", function () {
 document.querySelector('.multiply').addEventListener("click", function () {
     operationShown.innerHTML = 'X';
     firstNum = showNumber.innerHTML;
+    firstNum = Number(firstNum);
     showNumber.innerHTML = '';
 
 
