@@ -38,8 +38,8 @@ document.querySelector('.zero').addEventListener("click", function () {
 
 // symbolsokayy
 
-document.querySelector('.dot').addEventListener("click", function(){
-    if(showNumber.innerHTML.includes('.') == false){
+document.querySelector('.dot').addEventListener("click", function () {
+    if (showNumber.innerHTML.includes('.') == false) {
         showNumber.innerHTML = showNumber.innerHTML + '.'
     } else {
         showNumber.innerHTML = showNumber.innerHTML;
@@ -100,7 +100,7 @@ document.querySelector('.last').addEventListener("click", function () {
     else if (operationShown.innerHTML == '/') {
         showNumber.innerHTML = firstNum / secondNum;
     }
-    else{
+    else {
         showNumber.innerHTML = 'Insufficient input';
     }
 
@@ -166,6 +166,13 @@ document.addEventListener("keypress", function (e) {
             operationShown.innerHTML = 'X';
             firstNum = showNumber.innerHTML;
             showNumber.innerHTML = '';
+            break;
+        case '.':
+            if (showNumber.innerHTML.includes('.') == false) {
+                showNumber.innerHTML = showNumber.innerHTML + '.'
+            } else {
+                showNumber.innerHTML = showNumber.innerHTML;
+            }
             break;
         default:
             break;
