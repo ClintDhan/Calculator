@@ -57,53 +57,52 @@ document.querySelector('.delete').addEventListener("click", function () {
     console.log(newNumber);
 });
 document.querySelector('.multiply').addEventListener("click", function () {
-    operationShown.innerHTML = 'X';
-    firstNum = showNumber.innerHTML;
-    firstNum = Number(firstNum);
+    if(operationShown.innerHTML !== '') {
+        secondNum = Number(showNumber.innerHTML);
+        calculate();
+    }
+    operationShown.innerHTML = '*';
+    firstNum = Number(showNumber.innerHTML);
     showNumber.innerHTML = '';
-
-
 });
 document.querySelector('.add').addEventListener("click", function () {
+    // operationShown.innerHTML = '+';
+    // firstNum = showNumber.innerHTML;
+    // firstNum = Number(firstNum);
+    // showNumber.innerHTML = '';
+
+    if(operationShown.innerHTML !== '') {
+        secondNum = Number(showNumber.innerHTML);
+        calculate();
+    }
     operationShown.innerHTML = '+';
-    firstNum = showNumber.innerHTML;
-    firstNum = Number(firstNum);
+    firstNum = Number(showNumber.innerHTML);
     showNumber.innerHTML = '';
 })
 
 document.querySelector('.subtract').addEventListener("click", function () {
+    if(operationShown.innerHTML !== '') {
+        secondNum = Number(showNumber.innerHTML);
+        calculate();
+    }
     operationShown.innerHTML = '-';
-    firstNum = showNumber.innerHTML;
-    firstNum = Number(firstNum);
+    firstNum = Number(showNumber.innerHTML);
     showNumber.innerHTML = '';
 })
 
 document.querySelector('.divide').addEventListener("click", function () {
+    if(operationShown.innerHTML !== '') {
+        secondNum = Number(showNumber.innerHTML);
+        calculate();
+    }
     operationShown.innerHTML = '/';
-    firstNum = showNumber.innerHTML;
-    firstNum = Number(firstNum);
+    firstNum = Number(showNumber.innerHTML);
     showNumber.innerHTML = '';
 })
 
 document.querySelector('.last').addEventListener("click", function () {
-    secondNum = showNumber.innerHTML;
-    secondNum = Number(secondNum);
-    showNumber.innerHTML = Number(showNumber.innerHTML);
-    if (operationShown.innerHTML == 'X') {
-        showNumber.innerHTML = firstNum * secondNum;
-    }
-    else if (operationShown.innerHTML == '+') {
-        showNumber.innerHTML = firstNum + secondNum;
-    }
-    else if (operationShown.innerHTML == '-') {
-        showNumber.innerHTML = firstNum - secondNum;
-    }
-    else if (operationShown.innerHTML == '/') {
-        showNumber.innerHTML = firstNum / secondNum;
-    }
-    else {
-        showNumber.innerHTML = 'Insufficient input';
-    }
+    secondNum = Number(showNumber.innerHTML);
+    calculate();
 
 
 })
@@ -179,6 +178,29 @@ document.addEventListener("keypress", function (e) {
             break;
     }
 })
+
+function calculate() {
+    let result;
+    secondNum = Number(showNumber.innerHTML);
+    if(operationShown.innerHTML == '+'){
+        result = firstNum + secondNum;
+    }
+    else if (operationShown.innerHTML == '-'){
+        result = firstNum - secondNum;
+    }
+    else if(operationShown.innerHTML == '/') {
+        result = firstNum / secondNum;
+    }
+    else if (operationShown.innerHTML == "*") {
+        result = firstNum * secondNum;
+    }
+    
+    
+    showNumber.innerHTML = result;
+    firstNum = result;
+    secondNum = null;
+}
+
 
 
 
