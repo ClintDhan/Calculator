@@ -1,5 +1,5 @@
 let showNumber = document.querySelector('.show');
-let showNumber2 = document.querySelector('.showSecond');
+let showAnswer = document.querySelector('.showAnswer');
 let operationShown = document.querySelector('.operation');
 let firstNum;
 let secondNum;
@@ -47,8 +47,8 @@ document.querySelector('.dot').addEventListener("click", function () {
 })
 document.querySelector('.clear').addEventListener("click", function () {
     showNumber.innerHTML = '';
-    showNumber2.innerHTML = '';
     document.querySelector('.operation').innerHTML = '';
+    showAnswer.innerHTML = '';
 })
 
 document.querySelector('.delete').addEventListener("click", function () {
@@ -56,55 +56,55 @@ document.querySelector('.delete').addEventListener("click", function () {
     showNumber.innerHTML = newNumber;
     console.log(newNumber);
 });
-document.querySelector('.multiply').addEventListener("click", function () {
-    if(operationShown.innerHTML !== '') {
-        secondNum = Number(showNumber.innerHTML);
-        calculate();
-    }
-    operationShown.innerHTML = '*';
-    firstNum = Number(showNumber.innerHTML);
-    showNumber.innerHTML = '';
-});
 document.querySelector('.add').addEventListener("click", function () {
-    // operationShown.innerHTML = '+';
-    // firstNum = showNumber.innerHTML;
-    // firstNum = Number(firstNum);
-    // showNumber.innerHTML = '';
-
-    if(operationShown.innerHTML !== '') {
+    if (operationShown.innerHTML !== '') {
         secondNum = Number(showNumber.innerHTML);
         calculate();
     }
     operationShown.innerHTML = '+';
-    firstNum = Number(showNumber.innerHTML);
+    firstNum = Number(showNumber.innerHTML); 
+    showAnswer.innerHTML = firstNum;
     showNumber.innerHTML = '';
 })
 
 document.querySelector('.subtract').addEventListener("click", function () {
-    if(operationShown.innerHTML !== '') {
+    if (operationShown.innerHTML !== '') {
         secondNum = Number(showNumber.innerHTML);
         calculate();
     }
     operationShown.innerHTML = '-';
     firstNum = Number(showNumber.innerHTML);
+    showAnswer.innerHTML = firstNum;
+    showNumber.innerHTML = '';
+})
+
+document.querySelector('.multiply').addEventListener("click", function () {
+    if (operationShown.innerHTML !== '') {
+        secondNum = Number(showNumber.innerHTML);
+        calculate();
+    }
+    operationShown.innerHTML = '*';
+    firstNum = Number(showNumber.innerHTML);
+    showAnswer.innerHTML = firstNum;
     showNumber.innerHTML = '';
 })
 
 document.querySelector('.divide').addEventListener("click", function () {
-    if(operationShown.innerHTML !== '') {
+    if (operationShown.innerHTML !== '') {
         secondNum = Number(showNumber.innerHTML);
         calculate();
     }
     operationShown.innerHTML = '/';
     firstNum = Number(showNumber.innerHTML);
+    showAnswer.innerHTML = firstNum;
     showNumber.innerHTML = '';
 })
 
 document.querySelector('.last').addEventListener("click", function () {
     secondNum = Number(showNumber.innerHTML);
     calculate();
-
-
+    document.querySelector('.operation').innerHTML = '';
+    showAnswer.innerHTML = '';
 })
 
 //keypress
@@ -181,7 +181,6 @@ document.addEventListener("keypress", function (e) {
 
 function calculate() {
     let result;
-    secondNum = Number(showNumber.innerHTML);
     if(operationShown.innerHTML == '+'){
         result = firstNum + secondNum;
     }
@@ -195,10 +194,9 @@ function calculate() {
         result = firstNum * secondNum;
     }
     
-    
-    showNumber.innerHTML = result;
     firstNum = result;
-    secondNum = null;
+    showNumber.innerHTML = result;
+    
 }
 
 

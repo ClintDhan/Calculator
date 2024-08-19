@@ -64,3 +64,20 @@ p, i {
     grid-column: -4/-1;
     border-radius: 1.25em;
 }
+
+
+.flex-show{
+    display: flex;
+}
+
+.operation {
+    margin-left: 5px;
+}
+
+.operation, .showAnswer {
+    opacity: 0.8;
+}
+
+.show{
+    font-size: 2rem;
+}

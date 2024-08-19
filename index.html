@@ -1,50 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-        </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Option 1: Include in HTML -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
-<main class="calculator-content">
-    <div class="calculator-screen">
-        <p class="show"></h1>
-        <p class="showSecond"></h1>
-        <p class="operation"></p>
-    </div>
+    <main class="calculator-content">
+        <div class="calculator-screen">
+            <div class="flex-show">
+                <p class="showAnswer"></p>
+                <p class="operation"></p>
+            </div>
+            <p class="show"></p>
+        </div>
 
-    <div class="calculator-buttons">
-        <div class="blue seven"><p>7</p></div>
-        <div class="blue eight"><p>8</p></div>
-        <div class="blue nine"><p>9</p></div>
-        <div class="red delete"><i class="fa-solid fa-play"></i></div>
-        <div class="red clear"><p>C</p></div>
-        <div class="blue four"><p>4</p></div>
-        <div class="blue five"><p>5</p></div>
-        <div class="blue six"><p>6</p></div>
-        <div class="red divide"><p>/</p></div>
-        <div class="red multiply"><p>*</p></div>
-        <div class="blue one"><p>1</p></div>
-        <div class="blue two"><p>2</p></div>
-        <div class="blue three"><p>3</p></div>
-        <div class="red add"><p>+</p></div>
-        <div class="red subtract"><p>-</p></div>
-        <div class="blue zero"><p>0</p></div>
-        <div class="blue dot"><p>.</p></div>
-        <div class="red last"><p>=</p></div>
-        
-    </div>
+        <div class="calculator-buttons">
+            <div class="blue seven">
+                <p>7</p>
+            </div>
+            <div class="blue eight">
+                <p>8</p>
+            </div>
+            <div class="blue nine">
+                <p>9</p>
+            </div>
+            <div class="red delete"><i class="fa-solid fa-play"></i></div>
+            <div class="red clear">
+                <p>C</p>
+            </div>
+            <div class="blue four">
+                <p>4</p>
+            </div>
+            <div class="blue five">
+                <p>5</p>
+            </div>
+            <div class="blue six">
+                <p>6</p>
+            </div>
+            <div class="red divide">
+                <p>/</p>
+            </div>
+            <div class="red multiply">
+                <p>*</p>
+            </div>
+            <div class="blue one">
+                <p>1</p>
+            </div>
+            <div class="blue two">
+                <p>2</p>
+            </div>
+            <div class="blue three">
+                <p>3</p>
+            </div>
+            <div class="red add">
+                <p>+</p>
+            </div>
+            <div class="red subtract">
+                <p>-</p>
+            </div>
+            <div class="blue zero">
+                <p>0</p>
+            </div>
+            <div class="blue dot">
+                <p>.</p>
+            </div>
+            <div class="red last">
+                <p>=</p>
+            </div>
 
-</main>
+        </div>
 
-<script src="index.js"></script>
+    </main>
+
+    <script src="index.js"></script>
 </body>
+
 </html>
