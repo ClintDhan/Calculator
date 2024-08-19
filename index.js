@@ -144,27 +144,50 @@ document.addEventListener("keypress", function (e) {
         case '0':
             showNumber.innerHTML = showNumber.innerHTML + 0;
             break;
+        case '=':
+            secondNum = Number(showNumber.innerHTML);
+            calculate();
+            document.querySelector('.operation').innerHTML = '';
+            showAnswer.innerHTML = '';
+            break;
         case '+':
+            if (operationShown.innerHTML !== '') {
+                secondNum = Number(showNumber.innerHTML);
+                calculate();
+            }
             operationShown.innerHTML = '+';
-            firstNum = showNumber.innerHTML;
-            firstNum = Number(firstNum);
+            firstNum = Number(showNumber.innerHTML); 
+            showAnswer.innerHTML = firstNum;
             showNumber.innerHTML = '';
             break;
         case '/':
+            if (operationShown.innerHTML !== '') {
+                secondNum = Number(showNumber.innerHTML);
+                calculate();
+            }
             operationShown.innerHTML = '/';
-            firstNum = showNumber.innerHTML;
-            firstNum = Number(firstNum);
+            firstNum = Number(showNumber.innerHTML); 
+            showAnswer.innerHTML = firstNum;
             showNumber.innerHTML = '';
             break;
         case '-':
+            if (operationShown.innerHTML !== '') {
+                secondNum = Number(showNumber.innerHTML);
+                calculate();
+            }
             operationShown.innerHTML = '-';
-            firstNum = showNumber.innerHTML;
-            firstNum = Number(firstNum);
+            firstNum = Number(showNumber.innerHTML); 
+            showAnswer.innerHTML = firstNum;
             showNumber.innerHTML = '';
             break;
         case '*':
-            operationShown.innerHTML = 'X';
-            firstNum = showNumber.innerHTML;
+            if (operationShown.innerHTML !== '') {
+                secondNum = Number(showNumber.innerHTML);
+                calculate();
+            }
+            operationShown.innerHTML = '*';
+            firstNum = Number(showNumber.innerHTML); 
+            showAnswer.innerHTML = firstNum;
             showNumber.innerHTML = '';
             break;
         case '.':
