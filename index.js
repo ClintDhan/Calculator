@@ -57,47 +57,74 @@ document.querySelector('.delete').addEventListener("click", function () {
     console.log(newNumber);
 });
 document.querySelector('.add').addEventListener("click", function () {
-    if (operationShown.innerHTML !== '') {
+    if (operationShown.innerHTML !== '' && showNumber.innerHTML.length >= 1) {
         secondNum = Number(showNumber.innerHTML);
         calculate();
+        operationShown.innerHTML = '+';
     }
+    else if (operationShown.innerHTML !== '' && showNumber.innerHTML == '') {
+        showAnswer.innerHTML = firstNum;
+        operationShown.innerHTML = '+';
+    }
+    else{
     operationShown.innerHTML = '+';
-    firstNum = Number(showNumber.innerHTML); 
+    firstNum = Number(showNumber.innerHTML);
     showAnswer.innerHTML = firstNum;
     showNumber.innerHTML = '';
+    }
+  
 })
 
 document.querySelector('.subtract').addEventListener("click", function () {
-    if (operationShown.innerHTML !== '') {
+    if (operationShown.innerHTML !== '' && showNumber.innerHTML.length >= 1) {
         secondNum = Number(showNumber.innerHTML);
         calculate();
+        operationShown.innerHTML = '-';
     }
+    else if (operationShown.innerHTML !== '' && showNumber.innerHTML == '') {
+        showAnswer.innerHTML = firstNum;
+        operationShown.innerHTML = '-';
+    }
+    else{
     operationShown.innerHTML = '-';
     firstNum = Number(showNumber.innerHTML);
     showAnswer.innerHTML = firstNum;
     showNumber.innerHTML = '';
+    }
 })
 
 document.querySelector('.multiply').addEventListener("click", function () {
-    if (operationShown.innerHTML !== '') {
+    if (operationShown.innerHTML !== '' && showNumber.innerHTML.length >= 1) {
         secondNum = Number(showNumber.innerHTML);
         calculate();
     }
+    else if (operationShown.innerHTML !== '' && showNumber.innerHTML == '') {
+        showAnswer.innerHTML = firstNum;
+        operationShown.innerHTML = '*';
+    }
+    else{
     operationShown.innerHTML = '*';
     firstNum = Number(showNumber.innerHTML);
     showAnswer.innerHTML = firstNum;
     showNumber.innerHTML = '';
+    }
 })
 
 document.querySelector('.divide').addEventListener("click", function () {
-    if (operationShown.innerHTML !== '') {
+    if (operationShown.innerHTML !== '' && showNumber.innerHTML.length >= 1) {
         secondNum = Number(showNumber.innerHTML);
         calculate();
     }
+    else if (operationShown.innerHTML !== '' && showNumber.innerHTML == '') {
+        showAnswer.innerHTML = firstNum;
+        operationShown.innerHTML = '/';
+    }
+    else{
     operationShown.innerHTML = '/';
     firstNum = Number(showNumber.innerHTML);
     showAnswer.innerHTML = firstNum;
     showNumber.innerHTML = '';
+    }
 })
 
 document.querySelector('.last').addEventListener("click", function () {
@@ -151,44 +178,68 @@ document.addEventListener("keypress", function (e) {
             showAnswer.innerHTML = '';
             break;
         case '+':
-            if (operationShown.innerHTML !== '') {
+            if (operationShown.innerHTML !== '' && showNumber.innerHTML.length >= 1) {
                 secondNum = Number(showNumber.innerHTML);
                 calculate();
             }
+            else if (operationShown.innerHTML !== '' && showNumber.innerHTML == '') {
+                showAnswer.innerHTML = firstNum;
+                operationShown.innerHTML = '+';
+            }
+            else{
             operationShown.innerHTML = '+';
-            firstNum = Number(showNumber.innerHTML); 
+            firstNum = Number(showNumber.innerHTML);
             showAnswer.innerHTML = firstNum;
             showNumber.innerHTML = '';
+            }
             break;
         case '/':
-            if (operationShown.innerHTML !== '') {
+            if (operationShown.innerHTML !== '' && showNumber.innerHTML.length >= 1) {
                 secondNum = Number(showNumber.innerHTML);
                 calculate();
             }
+            else if (operationShown.innerHTML !== '' && showNumber.innerHTML == '') {
+                showAnswer.innerHTML = firstNum;
+                operationShown.innerHTML = '/';
+            }
+            else{
             operationShown.innerHTML = '/';
-            firstNum = Number(showNumber.innerHTML); 
+            firstNum = Number(showNumber.innerHTML);
             showAnswer.innerHTML = firstNum;
             showNumber.innerHTML = '';
+            }
             break;
         case '-':
-            if (operationShown.innerHTML !== '') {
+            if (operationShown.innerHTML !== '' && showNumber.innerHTML.length >= 1) {
                 secondNum = Number(showNumber.innerHTML);
                 calculate();
             }
+            else if (operationShown.innerHTML !== '' && showNumber.innerHTML == '') {
+                showAnswer.innerHTML = firstNum;
+                operationShown.innerHTML = '-';
+            }
+            else{
             operationShown.innerHTML = '-';
-            firstNum = Number(showNumber.innerHTML); 
+            firstNum = Number(showNumber.innerHTML);
             showAnswer.innerHTML = firstNum;
             showNumber.innerHTML = '';
+            }
             break;
         case '*':
-            if (operationShown.innerHTML !== '') {
+            if (operationShown.innerHTML !== '' && showNumber.innerHTML.length >= 1) {
                 secondNum = Number(showNumber.innerHTML);
                 calculate();
             }
+            else if (operationShown.innerHTML !== '' && showNumber.innerHTML == '') {
+                showAnswer.innerHTML = firstNum;
+                operationShown.innerHTML = '*';
+            }
+            else{
             operationShown.innerHTML = '*';
-            firstNum = Number(showNumber.innerHTML); 
+            firstNum = Number(showNumber.innerHTML);
             showAnswer.innerHTML = firstNum;
             showNumber.innerHTML = '';
+            }
             break;
         case '.':
             if (showNumber.innerHTML.includes('.') == false) {
@@ -204,22 +255,22 @@ document.addEventListener("keypress", function (e) {
 
 function calculate() {
     let result;
-    if(operationShown.innerHTML == '+'){
+    if (operationShown.innerHTML == '+') {
         result = firstNum + secondNum;
     }
-    else if (operationShown.innerHTML == '-'){
+    else if (operationShown.innerHTML == '-') {
         result = firstNum - secondNum;
     }
-    else if(operationShown.innerHTML == '/') {
+    else if (operationShown.innerHTML == '/') {
         result = firstNum / secondNum;
     }
     else if (operationShown.innerHTML == "*") {
         result = firstNum * secondNum;
     }
-    
+
     firstNum = result;
     showNumber.innerHTML = result;
-    
+
 }
 
 
