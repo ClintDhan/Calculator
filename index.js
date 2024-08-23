@@ -134,26 +134,36 @@ document.querySelector('.last').addEventListener("click", function () {
     let equals;
     if (operationShown.innerHTML == '+') {
         equals = firstNum + secondNum;
-        document.querySelector('.operation').innerHTML = '+';
+       
     }
     else if (operationShown.innerHTML == '-') {
         equals = firstNum - secondNum;
-        document.querySelector('.operation').innerHTML = '-';
+        
     }
     else if (operationShown.innerHTML == '/') {
         equals = firstNum / secondNum;
-        document.querySelector('.operation').innerHTML = '/';
+        
     }
     else if (operationShown.innerHTML == "*") {
         equals = firstNum * secondNum;
-        document.querySelector('.operation').innerHTML = '*';
     }
 
     firstNum = equals;
     showAnswer.innerHTML = equals;
-    showNumber.innerHTML = '';
-    // document.querySelector('.operation').innerHTML = '';
-    // showAnswer.innerHTML = '';
+    showNumber.innerHTML = secondNum;
+    
+    if(showNumber.innerHTML !== '' && operationShown.innerHTML == "+"){
+        showAnswer.innerHTML = firstNum + 0;
+    }
+    else if(showNumber.innerHTML !== '' && operationShown.innerHTML == "-"){
+        showAnswer.innerHTML = firstNum - 0;
+    }
+    else if(showNumber.innerHTML !== '' && operationShown.innerHTML == "*"){
+        showAnswer.innerHTML = firstNum * 1;
+    }
+    else if(showNumber.innerHTML !== '' && operationShown.innerHTML == "/") {
+        showAnswer.innerHTML = firstNum / 1;
+    }
 })
 
 //keypress
@@ -296,6 +306,8 @@ function calculate() {
     showNumber.innerHTML = '';
 
 }
+
+
 
 
 
