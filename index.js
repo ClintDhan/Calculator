@@ -66,13 +66,13 @@ document.querySelector('.add').addEventListener("click", function () {
         showAnswer.innerHTML = firstNum;
         operationShown.innerHTML = '+';
     }
-    else{
-    operationShown.innerHTML = '+';
-    firstNum = Number(showNumber.innerHTML);
-    showAnswer.innerHTML = firstNum;
-    showNumber.innerHTML = '';
+    else {
+        operationShown.innerHTML = '+';
+        firstNum = Number(showNumber.innerHTML);
+        showAnswer.innerHTML = firstNum;
+        showNumber.innerHTML = '';
     }
-  
+
 })
 
 document.querySelector('.subtract').addEventListener("click", function () {
@@ -85,11 +85,11 @@ document.querySelector('.subtract').addEventListener("click", function () {
         showAnswer.innerHTML = firstNum;
         operationShown.innerHTML = '-';
     }
-    else{
-    operationShown.innerHTML = '-';
-    firstNum = Number(showNumber.innerHTML);
-    showAnswer.innerHTML = firstNum;
-    showNumber.innerHTML = '';
+    else {
+        operationShown.innerHTML = '-';
+        firstNum = Number(showNumber.innerHTML);
+        showAnswer.innerHTML = firstNum;
+        showNumber.innerHTML = '';
     }
 })
 
@@ -102,11 +102,11 @@ document.querySelector('.multiply').addEventListener("click", function () {
         showAnswer.innerHTML = firstNum;
         operationShown.innerHTML = '*';
     }
-    else{
-    operationShown.innerHTML = '*';
-    firstNum = Number(showNumber.innerHTML);
-    showAnswer.innerHTML = firstNum;
-    showNumber.innerHTML = '';
+    else {
+        operationShown.innerHTML = '*';
+        firstNum = Number(showNumber.innerHTML);
+        showAnswer.innerHTML = firstNum;
+        showNumber.innerHTML = '';
     }
 })
 
@@ -119,19 +119,39 @@ document.querySelector('.divide').addEventListener("click", function () {
         showAnswer.innerHTML = firstNum;
         operationShown.innerHTML = '/';
     }
-    else{
-    operationShown.innerHTML = '/';
-    firstNum = Number(showNumber.innerHTML);
-    showAnswer.innerHTML = firstNum;
-    showNumber.innerHTML = '';
+    else {
+        operationShown.innerHTML = '/';
+        firstNum = Number(showNumber.innerHTML);
+        showAnswer.innerHTML = firstNum;
+        showNumber.innerHTML = '';
     }
 })
 
 document.querySelector('.last').addEventListener("click", function () {
     secondNum = Number(showNumber.innerHTML);
-    calculate();
-    document.querySelector('.operation').innerHTML = '';
-    showAnswer.innerHTML = '';
+    let equals;
+    if (operationShown.innerHTML == '+') {
+        equals = firstNum + secondNum;
+        document.querySelector('.operation').innerHTML = '+';
+    }
+    else if (operationShown.innerHTML == '-') {
+        equals = firstNum - secondNum;
+        document.querySelector('.operation').innerHTML = '-';
+    }
+    else if (operationShown.innerHTML == '/') {
+        equals = firstNum / secondNum;
+        document.querySelector('.operation').innerHTML = '/';
+    }
+    else if (operationShown.innerHTML == "*") {
+        equals = firstNum * secondNum;
+        document.querySelector('.operation').innerHTML = '*';
+    }
+
+    firstNum = equals;
+    showAnswer.innerHTML = equals;
+    showNumber.innerHTML = '';
+    // document.querySelector('.operation').innerHTML = '';
+    // showAnswer.innerHTML = '';
 })
 
 //keypress
@@ -186,11 +206,11 @@ document.addEventListener("keypress", function (e) {
                 showAnswer.innerHTML = firstNum;
                 operationShown.innerHTML = '+';
             }
-            else{
-            operationShown.innerHTML = '+';
-            firstNum = Number(showNumber.innerHTML);
-            showAnswer.innerHTML = firstNum;
-            showNumber.innerHTML = '';
+            else {
+                operationShown.innerHTML = '+';
+                firstNum = Number(showNumber.innerHTML);
+                showAnswer.innerHTML = firstNum;
+                showNumber.innerHTML = '';
             }
             break;
         case '/':
@@ -202,11 +222,11 @@ document.addEventListener("keypress", function (e) {
                 showAnswer.innerHTML = firstNum;
                 operationShown.innerHTML = '/';
             }
-            else{
-            operationShown.innerHTML = '/';
-            firstNum = Number(showNumber.innerHTML);
-            showAnswer.innerHTML = firstNum;
-            showNumber.innerHTML = '';
+            else {
+                operationShown.innerHTML = '/';
+                firstNum = Number(showNumber.innerHTML);
+                showAnswer.innerHTML = firstNum;
+                showNumber.innerHTML = '';
             }
             break;
         case '-':
@@ -218,11 +238,11 @@ document.addEventListener("keypress", function (e) {
                 showAnswer.innerHTML = firstNum;
                 operationShown.innerHTML = '-';
             }
-            else{
-            operationShown.innerHTML = '-';
-            firstNum = Number(showNumber.innerHTML);
-            showAnswer.innerHTML = firstNum;
-            showNumber.innerHTML = '';
+            else {
+                operationShown.innerHTML = '-';
+                firstNum = Number(showNumber.innerHTML);
+                showAnswer.innerHTML = firstNum;
+                showNumber.innerHTML = '';
             }
             break;
         case '*':
@@ -234,11 +254,11 @@ document.addEventListener("keypress", function (e) {
                 showAnswer.innerHTML = firstNum;
                 operationShown.innerHTML = '*';
             }
-            else{
-            operationShown.innerHTML = '*';
-            firstNum = Number(showNumber.innerHTML);
-            showAnswer.innerHTML = firstNum;
-            showNumber.innerHTML = '';
+            else {
+                operationShown.innerHTML = '*';
+                firstNum = Number(showNumber.innerHTML);
+                showAnswer.innerHTML = firstNum;
+                showNumber.innerHTML = '';
             }
             break;
         case '.':
@@ -269,7 +289,8 @@ function calculate() {
     }
 
     firstNum = result;
-    showNumber.innerHTML = result;
+    showAnswer.innerHTML = result;
+    showNumber.innerHTML = '';
 
 }
 
