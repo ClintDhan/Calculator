@@ -97,6 +97,7 @@ document.querySelector('.multiply').addEventListener("click", function () {
     if (operationShown.innerHTML !== '' && showNumber.innerHTML.length >= 1) {
         secondNum = Number(showNumber.innerHTML);
         calculate();
+        operationShown.innerHTML = '*';
     }
     else if (operationShown.innerHTML !== '' && showNumber.innerHTML == '') {
         showAnswer.innerHTML = firstNum;
@@ -114,6 +115,7 @@ document.querySelector('.divide').addEventListener("click", function () {
     if (operationShown.innerHTML !== '' && showNumber.innerHTML.length >= 1) {
         secondNum = Number(showNumber.innerHTML);
         calculate();
+        operationShown.innerHTML = '/';
     }
     else if (operationShown.innerHTML !== '' && showNumber.innerHTML == '') {
         showAnswer.innerHTML = firstNum;
@@ -277,6 +279,7 @@ function calculate() {
     let result;
     if (operationShown.innerHTML == '+') {
         result = firstNum + secondNum;
+        
     }
     else if (operationShown.innerHTML == '-') {
         result = firstNum - secondNum;
